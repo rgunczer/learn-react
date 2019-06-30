@@ -132,9 +132,18 @@
             );
         }
 
+        function Cat({ name, color }) {
+            return <h1>The cat's name is {name} and it's color is: {color}</h1>;
+        }
+
         ReactDOM.render(
             <Menu recipes={data} title="Delicious Recipes" />,
             document.getElementById('root')
+        );
+
+        ReactDOM.render(
+            <Cat name="Jumbo" color="black"/>,
+            document.getElementById("root")
         );
     </script>
 </body>
