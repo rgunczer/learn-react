@@ -132,8 +132,22 @@
             );
         }
 
+        // function Cat({ name, color }) {
+        //     return (
+        //         <React.Fragment>
+        //             <h1>The cat's name is {name} and it's color is: {color}</h1>
+        //             <p>He's good.</p>
+        //         </React.Fragment>
+        //     );
+        // }
+
         function Cat({ name, color }) {
-            return <h1>The cat's name is {name} and it's color is: {color}</h1>;
+            return (
+                <>
+                    <h1>The cat's name is {name} and it's color is: {color}</h1>
+                    <p>He's good.</p>
+                </>
+            );
         }
 
         ReactDOM.render(
