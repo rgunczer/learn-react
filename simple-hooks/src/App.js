@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Example from './Example';
 
 function App() {
   const [count, setCount] = useState(10);
@@ -14,6 +15,8 @@ function App() {
       <button onClick={ () => setFruit('apple') }>
         Set Fruit
       </button>
+      <hr />
+      <Example />
     </div>
   );
 }
