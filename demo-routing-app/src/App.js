@@ -7,7 +7,8 @@ function Home() {
   return <div>Home Here</div>
 }
 
-function About() {
+function About(props) {
+  console.log('About::props ->', props);
   return <div>About here</div>
 }
 
@@ -18,7 +19,7 @@ function Header() {
         <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to="/about">About</Link>
+        <Link to={{ pathname:"/about", search:"?sort=name&age=32" }}>About</Link>
       </li>
     </ul>
   )
