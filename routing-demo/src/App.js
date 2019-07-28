@@ -8,6 +8,8 @@ import Header from './Header';
 import TestModal from './ModalTest';
 import 'bootstrap/dist/css/bootstrap.css';
 
+const REACT_VERSION = React.version;
+
 class App extends Component {
 
   state = {
@@ -23,7 +25,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <h1>Main App Title</h1>
+        <h1>Main App Title [React version: { REACT_VERSION }]</h1>
         <TestModal />
         <Header />
         {/* <Route render={props =>
