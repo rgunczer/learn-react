@@ -15,7 +15,7 @@ function App() {
       <ul>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/about">About</Link></li>
-        <li><Link to="/person">Person</Link></li>
+        <li><Link to="/person?q=appleboss&a=stevejobs">Person</Link></li>
       </ul>
       <Switch>
         <Route exact path="/" component={Home}/>
