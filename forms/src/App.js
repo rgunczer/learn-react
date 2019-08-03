@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import FormWithCheckbox from './FormWithCheckbox';
 import FormWithDropdown from './FormWithDropdown';
+import FormWithValidation from './FormWithValidation';
 
 class App extends Component {
 
@@ -82,6 +83,8 @@ class App extends Component {
         <FormWithCheckbox />
         <hr />
         <FormWithDropdown />
+        <hr />
+        <FormWithValidation />
       </div>
     );
   }
