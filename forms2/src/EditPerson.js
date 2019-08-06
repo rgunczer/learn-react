@@ -91,6 +91,10 @@ export default class EditPerson extends Component {
                     <RequiredWarning show={this.state.formErrors.country} />
                     <br />
 
+                    <label>Resident:</label>
+                    <input type="checkbox"></input>
+                    <br />
+
                     <button>Submit</button>
                 </form>
                 <pre style={{ backgroundColor: 'lightgray' }}>
