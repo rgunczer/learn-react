@@ -20,6 +20,7 @@ export default class EditPerson extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         console.log('submit');
+        this.validateForm();
 
     }
 
@@ -31,19 +32,24 @@ export default class EditPerson extends Component {
         console.log(`name: [${name}], value:[${value}]`);
 
         this.setState({
-            form: { ...this.state.form, [name]: value}
+            form: { ...this.state.form, [name]: value }
         }, () => {
-
-            switch(name) {
+            switch (name) {
                 case 'name':
                     this.setState({
-                        formErrors: {...this.state.formErrors, name: this.state.form.name === '' }
+                        formErrors: { ...this.state.formErrors, name: this.state.form.name === '' }
                     });
                     break;
 
                 case 'nick':
                     this.setState({
-                        formErrors: {...this.state.formErrors, nick: this.state.form.nick === '' || this.state.form.nick.length < 3 }
+                        formErrors: { ...this.state.formErrors, nick: this.state.form.nick === '' || this.state.form.nick.length < 3 }
+                    });
+                    break;
+
+                case 'nick':
+                    this.setState({
+                        formErrors: { ...this.state.formErrors, country: this.state.form.country === '' }
                     });
                     break;
 
@@ -51,6 +57,18 @@ export default class EditPerson extends Component {
                     break;
             }
 
+        });
+    }
+
+    validateForm() {
+
+        this.setState({
+            formErrors: {
+                ...this.state.formErrors,
+                name: this.state.form.name === '',
+                nick: this.state.form.nick === '' || this.state.form.nick.length < 3,
+                country: this.state.form.country === ''
+            }
         });
     }
 
@@ -62,20 +80,20 @@ export default class EditPerson extends Component {
 
                     <label htmlFor="name">Name: </label>
                     <input type="text" id="name" name="name" />
-                    <RequiredWarning show={this.state.formErrors.name}/>
+                    <RequiredWarning show={this.state.formErrors.name} />
                     <br />
                     <label htmlFor="nick">Nick: </label>
                     <input type="text" id="nick" name="nick" />
-                    <RequiredWarning show={this.state.formErrors.nick}/>
+                    <RequiredWarning show={this.state.formErrors.nick} />
                     <br />
                     <label htmlFor="country">Country: </label>
                     <input type="text" id="country" name="country" />
-                    <RequiredWarning show={this.state.formErrors.country}/>
+                    <RequiredWarning show={this.state.formErrors.country} />
                     <br />
 
                     <button>Submit</button>
                 </form>
-                <pre style={{backgroundColor: 'lightgray'}}>
+                <pre style={{ backgroundColor: 'lightgray' }}>
                     {JSON.stringify(this.state, null, 2)}
                 </pre>
             </div>
