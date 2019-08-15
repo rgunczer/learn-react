@@ -45,7 +45,7 @@ class App extends Component {
     this.setState({
       text: ''
     });
-    // this.inp. focus();
+    this.inp.current.focus();
   }
 
   onDel = () => {
