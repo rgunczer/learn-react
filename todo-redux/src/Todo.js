@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+
 import { removeTodo } from './store/actionCreators';
 
 class Todo extends Component {
@@ -11,13 +13,15 @@ class Todo extends Component {
     render() {
         return (
             <li>
-
-                    <span>{this.props.name}</span>
-                    <button onClick={this.handleRemove}>X</button>
-
+                <span>{this.props.name}</span>
+                <button onClick={this.handleRemove}>X</button>
             </li>
         );
     }
+}
+
+Todo.propTypes = {
+    name: PropTypes.string.isRequired
 }
 
 export default connect(
