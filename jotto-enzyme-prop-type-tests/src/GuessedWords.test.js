@@ -38,7 +38,7 @@ describe('if there are no words guessed', () => {
     });
 });
 
-describe('if there are workds guessed', () => {
+describe('if there are words guessed', () => {
     let wrapper;
     const guessedWords = [
         { guessedWord: 'train', letterMatchCount: 3 },
