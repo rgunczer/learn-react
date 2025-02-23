@@ -61,7 +61,8 @@ function Map() {
       // 3. Smoothly ease to the new center with customizable animation:
       mapRef.current.easeTo({
         center: [lng, lat],
-        duration: 1000, // animation duration in milliseconds
+        duration: 600, // animation duration in milliseconds
+        zoom: 15,
       });
 
       if (marker) {
@@ -91,6 +92,9 @@ function Map() {
   }, []);
 
   const handleButtonClick = () => {
+    const mapBounds = mapRef.current.getBounds();
+    console.log("[MAP-BOUNDS]", mapBounds);
+
     mapRef.current.flyTo({
       center: INITIAL_CENTER,
       zoom: INITIAL_ZOOM,
