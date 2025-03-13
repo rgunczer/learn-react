@@ -9,7 +9,7 @@ function App() {
   } = useForm({
     defaultValues: {
       'firstName': 'sarah',
-      'lastName': 'karrigan',
+      'lastName': 'kerrigan',
     },
   });
 
