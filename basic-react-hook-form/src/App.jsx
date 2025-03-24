@@ -2,6 +2,7 @@ import { useForm } from 'react-hook-form';
 import './App.css'
 
 function App() {
+  console.log('App render');
   const {
     register,
     handleSubmit,
