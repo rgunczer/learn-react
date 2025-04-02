@@ -1,7 +1,21 @@
 import React from 'react'
 
-export const Input = () => {
+export const Input = (props) => {
+  const {
+    type = 'text',
+    className = '',
+    label,
+    ...other
+  } = props;
   return (
-    <div>Input</div>
+    <div className="">
+      <input
+        type={type}
+        className={` ${className}`}
+        placeholder={label}
+        {...other}
+      />
+      <label>{label}</label>
+    </div>
   )
 }

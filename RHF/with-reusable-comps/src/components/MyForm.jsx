@@ -15,7 +15,7 @@ export const MyForm = () => {
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
         {/* <input type="text" { ... register('name') } /> */}
-        <Input />
+        <Input label="User name" { ...register('name') } />
         <Dropdown />
         <button type="submit">Submit</button>
       </form>
