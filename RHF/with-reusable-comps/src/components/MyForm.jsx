@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 
 import { Input } from './controls/Input';
 import { Dropdown } from './controls/Dropdown';
+import { SubmitButton } from './controls/SubmitButton';
 
 export const MyForm = () => {
   const { register, handleSubmit } = useForm({});
@@ -17,7 +18,7 @@ export const MyForm = () => {
         {/* <input type="text" { ... register('name') } /> */}
         <Input label="User name" { ...register('name') } />
         <Dropdown />
-        <button type="submit">Submit</button>
+        <SubmitButton />
       </form>
     </div>
   )
