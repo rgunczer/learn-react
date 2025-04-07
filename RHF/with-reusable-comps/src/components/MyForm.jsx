@@ -6,10 +6,14 @@ import { Dropdown } from './controls/Dropdown';
 import { SubmitButton } from './controls/SubmitButton';
 
 export const MyForm = () => {
-  const { register, handleSubmit } = useForm({});
+  const { register, handleSubmit, control } = useForm({});
 
-  const onSubmit = formData => {
-    console.log('onSubmit -> formData', formData);
+  const onSubmit = async formData => {
+    console.log('onSubmit[BEGIN] -> formData', formData);
+
+    await new Promise(resolve => setTimeout(resolve, 3000));
+
+    console.log('onSubmit[END] -> formData', formData);
   }
 
   return (
@@ -18,7 +22,7 @@ export const MyForm = () => {
         {/* <input type="text" { ... register('name') } /> */}
         <Input label="User name" { ...register('name') } />
         <Dropdown />
-        <SubmitButton />
+        <SubmitButton control={control} />
       </form>
     </div>
   )
