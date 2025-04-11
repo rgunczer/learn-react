@@ -7,6 +7,7 @@ export const Input = (props) => {
     label,
     ...other
   } = props;
+
   return (
     <div className="">
       <input
