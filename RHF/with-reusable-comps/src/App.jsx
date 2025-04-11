@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-      <h1>RHF - Reusable Components</h1>
+      <h1 style={{ marginBottom: '2rem' }}>RHF - Reusable Components</h1>
       <MyForm />
     </>
   )
